@@ -33,9 +33,9 @@ print res.summary() #useful to check if the predictors are significant or not, s
 """Distribution of predictions"""
 kde_res =  st.nonparametric.KDEUnivariate(res.predict())
 kde_res.fit()
-# plt.subplot(kde_res.support, kde_res.density)
-# plt.fill_between(kde_res.support, kde_res.density, alpha = 0.5)
-# plt.title("Distribution of the predictions")
+plt.subplot(kde_res.support, kde_res.density)
+plt.fill_between(kde_res.support, kde_res.density, alpha = 0.5)
+plt.title("Distribution of the predictions")
 
 """Change of survival probability by gender"""
 plt.scatter(res.predict(), x_train['C(Sex)[T.male]'], alpha=0.5)
